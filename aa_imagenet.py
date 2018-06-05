@@ -77,7 +77,7 @@ class SubPolicy4(object):
 
     def __call__(self, img, ranges):
         if random.random() < 0.4: img = ImageOps.equalize(img)
-        if random.random() < 0.2: img = ImageOps.solarize(img, ranges["solarize"][5])
+        if random.random() < 0.2: img = ImageOps.solarize(img, ranges["solarize"][4])
         return img
 
 
@@ -203,7 +203,7 @@ class SubPolicy17(object):
     def __call__(self, img, ranges):
         if random.random() < 0.4:
             enhancer = ImageEnhance.Sharpness(img)
-            img = enhancer.enhance(ranges["sharpness"][8])
+            img = enhancer.enhance(ranges["sharpness"][7])
         if random.random() < 0.6: img = ImageOps.invert(img)
         return img
 
@@ -242,7 +242,7 @@ class SubPolicy21(object):
     """ Sub-policy 21 (Solarize,0.6,5) (AutoContrast,0.6,5) """
 
     def __call__(self, img, ranges):
-        if random.random() < 0.6: img = ImageOps.solarize(img, ranges["solarize"][4])
+        if random.random() < 0.6: img = ImageOps.solarize(img, ranges["solarize"][5])
         if random.random() < 0.6: img = ImageOps.autocontrast(img)
         return img
 
