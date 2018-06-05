@@ -13,4 +13,4 @@ data = ImageFolder(rootdir, transform=transforms.Compose(
 loader = DataLoader(data, ...)
 ```
 
-#### Shear function adapted from [Augmentor](# from https://github.com/mdbloice/Augmentor/blob/master/Augmentor/Operations.py)
+#### Shear function adapted from [Augmentor](https://github.com/mdbloice/Augmentor/blob/master/Augmentor/Operations.py)
