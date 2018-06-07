@@ -5,6 +5,18 @@ import random
 
 
 class ImageNetPolicy(object):
+    """ Best AutoAugment Policy of 24 sub policies on ImageNet.
+
+        Example:
+        >>> policy = ImageNetPolicy()
+        >>> transformed = policy(image)
+
+        Example as a PyTorch Transform:
+        >>> transform=transforms.Compose([
+        >>>     transforms.Resize(256),
+        >>>     ImageNetPolicy(),
+        >>>     transforms.ToTensor()])
+    """
     def __init__(self):
         self.policies = [ImageNetSubPolicy0(), ImageNetSubPolicy1(), ImageNetSubPolicy2(), ImageNetSubPolicy3(), ImageNetSubPolicy4(), ImageNetSubPolicy5(),
                          ImageNetSubPolicy6(), ImageNetSubPolicy7(), ImageNetSubPolicy8(), ImageNetSubPolicy9(), ImageNetSubPolicy10(), ImageNetSubPolicy11(),
@@ -249,6 +261,18 @@ class ImageNetSubPolicy23(object):
 
 
 class CIFAR10Policy(object):
+    """ Best AutoAugment Policy of 25 sub policies on CIFAR10.
+
+        Example:
+        >>> policy = CIFAR10Policy()
+        >>> transformed = policy(image)
+
+        Example as a PyTorch Transform:
+        >>> transform=transforms.Compose([
+        >>>     transforms.Resize(256),
+        >>>     CIFAR10Policy(),
+        >>>     transforms.ToTensor()])
+    """
     def __init__(self):
         self.policies = [CIFAR10SubPolicy0(), CIFAR10SubPolicy1(), CIFAR10SubPolicy2(), CIFAR10SubPolicy3(),
                          CIFAR10SubPolicy4(), CIFAR10SubPolicy5(), CIFAR10SubPolicy6(), CIFAR10SubPolicy7(),
