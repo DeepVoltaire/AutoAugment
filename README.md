@@ -48,8 +48,8 @@ loader = DataLoader(data, ...)
 > For example, the policy found on ImageNet leads to significant improvements on a variety of FGVC datasets. Even on datasets for
 > which fine-tuning weights pre-trained on ImageNet does not help significantly [26], e.g. Stanford
 > Cars [27] and FGVC Aircraft [28], training with the ImageNet policy reduces test set error by 1.16%
-> and 1.76%, respectively. This result suggests that transferring data augmentation policies offers an
-> alternative method for transfer learning.
+> and 1.76%, respectively. __This result suggests that transferring data augmentation policies offers an
+> alternative method for transfer learning__.
 
 ### CIFAR 10
 
@@ -66,5 +66,9 @@ loader = DataLoader(data, ...)
 ### SVHN
 
 ![SVHN Results](figures/SVHN_results.png)
+
+### Fine Grained Visual Classification Datasets
+
+![SVHN Results](figures/FGVC_results.png)
 
 #### Shear function adapted from [Augmentor](https://github.com/mdbloice/Augmentor/blob/master/Augmentor/Operations.py)
