@@ -424,7 +424,7 @@ class CIFAR10SubPolicy12(object):
     def __call__(self, img, ranges):
         if random.random() < 0.4:
             img = img.transform(img.size, Image.AFFINE, (1, 0, 0, 0, 1, ranges["translateY"][3]*img.size[1]))
-        if random.random() < 0.2: img = ImageEnhance.Sharpness(img).enhance(ranges["sharpness"][5])
+        if random.random() < 0.2: img = ImageEnhance.Sharpness(img).enhance(ranges["sharpness"][6])
         return img
 
 
