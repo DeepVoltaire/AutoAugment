@@ -18,10 +18,12 @@ class ImageNetPolicy(object):
         >>>     transforms.ToTensor()])
     """
     def __init__(self):
-        self.policies = [ImageNetSubPolicy0(), ImageNetSubPolicy1(), ImageNetSubPolicy2(), ImageNetSubPolicy3(), ImageNetSubPolicy4(), ImageNetSubPolicy5(),
-                         ImageNetSubPolicy6(), ImageNetSubPolicy7(), ImageNetSubPolicy8(), ImageNetSubPolicy9(), ImageNetSubPolicy10(), ImageNetSubPolicy11(),
-                         ImageNetSubPolicy12(), ImageNetSubPolicy13(), ImageNetSubPolicy14(), ImageNetSubPolicy15(), ImageNetSubPolicy16(), ImageNetSubPolicy17(),
-                         ImageNetSubPolicy18(), ImageNetSubPolicy19(), ImageNetSubPolicy20(), ImageNetSubPolicy21(), ImageNetSubPolicy22(), ImageNetSubPolicy23()]
+        self.policies = [ImageNetSubPolicy0(), ImageNetSubPolicy1(), ImageNetSubPolicy2(), ImageNetSubPolicy3(),
+                         ImageNetSubPolicy4(), ImageNetSubPolicy5(), ImageNetSubPolicy6(), ImageNetSubPolicy7(),
+                         ImageNetSubPolicy8(), ImageNetSubPolicy9(), ImageNetSubPolicy10(), ImageNetSubPolicy11(),
+                         ImageNetSubPolicy12(), ImageNetSubPolicy13(), ImageNetSubPolicy14(), ImageNetSubPolicy15(),
+                         ImageNetSubPolicy16(), ImageNetSubPolicy17(), ImageNetSubPolicy18(), ImageNetSubPolicy19(),
+                         ImageNetSubPolicy20(), ImageNetSubPolicy21(), ImageNetSubPolicy22(), ImageNetSubPolicy23()]
         self.ranges = {
             "shearX": np.linspace(-0.3, 0.3, 10),
             "rotate": np.linspace(-30, 30, 10),
