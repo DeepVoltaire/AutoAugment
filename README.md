@@ -1,5 +1,5 @@
 # AutoAugment - Learning Augmentation Policies from Data
-Unofficial implementation of the ImageNet and CIFAR 10 (SVHN soon) Augmentation Policies learned by [AutoAugment](https://arxiv.org/abs/1805.09501v1), described in this [Google AI Blogpost](https://ai.googleblog.com/2018/06/improving-deep-learning-performance.html).
+Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policies learned by [AutoAugment](https://arxiv.org/abs/1805.09501v1), described in this [Google AI Blogpost](https://ai.googleblog.com/2018/06/improving-deep-learning-performance.html).
 
 ![Examples of the best ImageNet Policy](figures/Figure2_Paper.png)
 
@@ -39,6 +39,18 @@ data = ImageFolder(rootdir, transform=transforms.Compose(
                          transforms.Normalize(...)]))
 loader = DataLoader(data, ...)
 ```
+
+# Example as a PyTorch Transform - SVHN
+```python
+from autoaugment import SVHNPolicy
+data = ImageFolder(rootdir, transform=transforms.Compose(
+                        [SVHNPolicy(), 
+			 transforms.ToTensor(), 
+                         Cutout(n_holes=1, length=20), # (https://github.com/uoguelph-mlrg/Cutout/blob/master/util/cutout.py)
+                         transforms.Normalize(...)]))
+loader = DataLoader(data, ...)
+```
+
 
 ## Results with AutoAugment
 
