@@ -83,4 +83,7 @@ loader = DataLoader(data, ...)
 
 ![SVHN Results](figures/FGVC_results.png)
 
+### Open questions
+How can you set the pixel values after rotating to gray instead of black?
+
 #### Shear function adapted from [Augmentor](https://github.com/mdbloice/Augmentor/blob/master/Augmentor/Operations.py)

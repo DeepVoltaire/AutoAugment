@@ -190,10 +190,10 @@ class SubPolicy(object):
         func = {
             "shearX": lambda img, magnitude: shear(img, magnitude * 180, direction="x"),
             "shearY": lambda img, magnitude: shear(img, magnitude * 180, direction="y"),
-            "translateX": lambda img, magnitude: img.transform(img.size, Image.AFFINE,
-                                                               (1, 0, magnitude*img.size[0], 0, 1, 0)),
-            "translateY": lambda img, magnitude: img.transform(img.size, Image.AFFINE,
-                                                               (1, 0, 0, 0, 1, magnitude*img.size[1])),
+            "translateX": lambda img, magnitude: img.transform(
+                img.size, Image.AFFINE, (1, 0, magnitude*img.size[0], 0, 1, 0), fillcolor=(128, 128, 128)),
+            "translateY": lambda img, magnitude: img.transform(
+                img.size, Image.AFFINE, (1, 0, 0, 0, 1, magnitude*img.size[1]), fillcolor=(128, 128, 128)),
             "rotate": lambda img, magnitude: img.rotate(magnitude),
             "color": lambda img, magnitude: ImageEnhance.Color(img).enhance(magnitude),
             "posterize": lambda img, magnitude: ImageOps.posterize(img, magnitude),
@@ -249,7 +249,7 @@ def shear(img, angle_to_shear, direction="x"):
         img = img.transform((int(round(width + shift_in_pixels)), height),
                                 Image.AFFINE,
                                 transform_matrix,
-                                Image.BICUBIC)
+                                Image.BICUBIC, fillcolor=(128, 128, 128))
 
     #     img = img.crop((abs(shift_in_pixels), 0, width, height))
         return img.resize((width, height), resample=Image.BICUBIC)
@@ -268,7 +268,7 @@ def shear(img, angle_to_shear, direction="x"):
         image = img.transform((width, int(round(height + shift_in_pixels))),
                                 Image.AFFINE,
                                 transform_matrix,
-                                Image.BICUBIC)
+                                Image.BICUBIC, fillcolor=(128, 128, 128))
 
         # image = image.crop((0, abs(shift_in_pixels), width, height))
 
