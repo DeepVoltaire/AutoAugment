@@ -5,7 +5,7 @@ import random
 
 
 class ImageNetPolicy(object):
-    """ Best AutoAugment Policy of 24 Sub-policies on ImageNet.
+    """ Randomly choose one of the best 24 Sub-policies on ImageNet.
 
         Example:
         >>> policy = ImageNetPolicy()
@@ -59,7 +59,7 @@ class ImageNetPolicy(object):
 
 
 class CIFAR10Policy(object):
-    """ Best AutoAugment Policy of 25 Sub-policies on CIFAR10.
+    """ Randomly choose one of the best 25 Sub-policies on CIFAR10.
 
         Example:
         >>> policy = CIFAR10Policy()
@@ -114,7 +114,7 @@ class CIFAR10Policy(object):
 
 
 class SVHNPolicy(object):
-    """ Best AutoAugment Policy of 25 Sub-policies on SVHN.
+    """ Randomly choose one of the best 25 Sub-policies on SVHN.
 
         Example:
         >>> policy = SVHNPolicy()
