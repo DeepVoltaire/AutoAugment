@@ -3,7 +3,7 @@ Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policie
 
 ![Examples of the best ImageNet Policy](figures/Figure2_Paper.png)
 
-__Tested with Python 3.6. Needs pillow>=5.0.0__
+##### Tested with Python 3.6. Needs pillow>=5.0.0 #####
 ------------------
 
 
