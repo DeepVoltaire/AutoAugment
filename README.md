@@ -3,7 +3,12 @@ Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policie
 
 ![Examples of the best ImageNet Policy](figures/Figure2_Paper.png)
 
-# Example
+
+------------------
+
+
+## Example
+
 ```python
 from autoaugment import ImageNetPolicy
 image = PIL.Image.open(path)
@@ -12,7 +17,8 @@ transformed = policy(image)
 ```
 
 
-# Example as a PyTorch Transform - ImageNet 
+## Example as a PyTorch Transform - ImageNet 
+
 ```python
 from autoaugment import ImageNetPolicy
 data = ImageFolder(rootdir, transform=transforms.Compose(
@@ -28,7 +34,8 @@ From the paper it is not clear in what exact order to apply the preprocessing fo
 > horizontal flips with 50% probability, and random distortions of colors. For models trained with AutoAugment, we use the baseline pre-processing
 > and the policy learned on ImageNet. We find that removing the random distortions of color does not change the results for AutoAugment.
 
-# Example as a PyTorch Transform - CIFAR10
+## Example as a PyTorch Transform - CIFAR10
+
 ```python
 from autoaugment import CIFAR10Policy
 data = ImageFolder(rootdir, transform=transforms.Compose(
@@ -40,7 +47,8 @@ data = ImageFolder(rootdir, transform=transforms.Compose(
 loader = DataLoader(data, ...)
 ```
 
-# Example as a PyTorch Transform - SVHN
+## Example as a PyTorch Transform - SVHN
+
 ```python
 from autoaugment import SVHNPolicy
 data = ImageFolder(rootdir, transform=transforms.Compose(
@@ -50,6 +58,8 @@ data = ImageFolder(rootdir, transform=transforms.Compose(
                          transforms.Normalize(...)]))
 loader = DataLoader(data, ...)
 ```
+
+------------------
 
 
 ## Results with AutoAugment
