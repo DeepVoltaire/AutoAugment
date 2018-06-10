@@ -1,9 +1,11 @@
 # AutoAugment - Learning Augmentation Policies from Data
 Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policies learned by [AutoAugment](https://arxiv.org/abs/1805.09501v1), described in this [Google AI Blogpost](https://ai.googleblog.com/2018/06/improving-deep-learning-performance.html).
 
+##### Tested with Python 3.6. Needs pillow>=5.0.0 #####
+
 ![Examples of the best ImageNet Policy](figures/Figure2_Paper.png)
 
-##### Tested with Python 3.6. Needs pillow>=5.0.0 #####
+
 ------------------
 
 
