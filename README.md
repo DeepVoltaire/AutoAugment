@@ -3,7 +3,7 @@ Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policie
 
 ![Examples of the best ImageNet Policy](figures/Figure2_Paper.png)
 
-
+__Tested with Python 3.6. Needs pillow>=5.0.0__
 ------------------
 
 
@@ -94,6 +94,6 @@ loader = DataLoader(data, ...)
 ![SVHN Results](figures/FGVC_results.png)
 
 ### Open questions
-How can you set the pixel values after rotating to gray instead of black?
+- How can you set the corner pixel values after rotating to gray instead of black?
 
 #### Shear function adapted from [Augmentor](https://github.com/mdbloice/Augmentor/blob/master/Augmentor/Operations.py)
