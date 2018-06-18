@@ -1,12 +1,15 @@
 # AutoAugment - Learning Augmentation Policies from Data
 Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policies learned by [AutoAugment](https://arxiv.org/abs/1805.09501v1), described in this [Google AI Blogpost](https://ai.googleblog.com/2018/06/improving-deep-learning-performance.html).
 
-##### Tested with Python 3.6. Needs pillow>=5.0.0 #####
+#### Update 18.06.2018 Changed order and functionality of many magnitudes. Higher magnitude now always means to apply the operation with higher intensity and the sign is randomly sampled (e.g. rotating for 20 degrees to the left or right). This seems to be more in line with the authors of AutoAugment. Have asked them for more details and will update as soon as I know more.
+
+##### Tested with Python 3.6. Needs pillow>=5.0.0
 
 ![Examples of the best ImageNet Policy](figures/Figure2_Paper.png)
 
 
 ------------------
+
 
 
 ## Example
@@ -18,6 +21,7 @@ policy = ImageNetPolicy()
 transformed = policy(image)
 ```
 
+To see examples of all operations and magnitudes applied to images, take a look at  [AutoAugment_Exploration.ipynb](AutoAugment_Exploration.ipynb).
 
 ## Example as a PyTorch Transform - ImageNet 
 
@@ -97,5 +101,3 @@ loader = DataLoader(data, ...)
 
 ### Open questions
 - How can you set the corner pixel values after rotating to gray instead of black?
-
-#### Shear function adapted from [Augmentor](https://github.com/mdbloice/Augmentor/blob/master/Augmentor/Operations.py)
