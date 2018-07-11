@@ -30,8 +30,8 @@ To see examples of all operations and magnitudes applied to images, take a look 
 ```python
 from autoaugment import ImageNetPolicy
 data = ImageFolder(rootdir, transform=transforms.Compose(
-                        [transforms.Resize(256), ImageNetPolicy(), 
-                         transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), 
+                        [transforms.RandomResizedCrop(224), 
+                         transforms.RandomHorizontalFlip(), ImageNetPolicy(), 
                          transforms.ToTensor(), transforms.Normalize(...)]))
 loader = DataLoader(data, ...)
 ```
