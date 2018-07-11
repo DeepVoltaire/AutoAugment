@@ -30,16 +30,11 @@ To see examples of all operations and magnitudes applied to images, take a look 
 ```python
 from autoaugment import ImageNetPolicy
 data = ImageFolder(rootdir, transform=transforms.Compose(
-                        [transforms.Resize(256), ImageNetPolicy(), transforms.RandomResizedCrop(224), 
-                         transforms.RandomHorizontalFlip(), transforms.ToTensor(), transforms.Normalize(...)]))
+                        [transforms.Resize(256), ImageNetPolicy(), 
+                         transforms.RandomResizedCrop(224), transforms.RandomHorizontalFlip(), 
+                         transforms.ToTensor(), transforms.Normalize(...)]))
 loader = DataLoader(data, ...)
 ```
-
-From the paper it is not clear in what exact order to apply the preprocessing for ImageNet:
-
-> For baseline augmentation, we use the standard Inception-style pre-processing which involves scaling pixel values to [-1,1],
-> horizontal flips with 50% probability, and random distortions of colors. For models trained with AutoAugment, we use the baseline pre-processing
-> and the policy learned on ImageNet. We find that removing the random distortions of color does not change the results for AutoAugment.
 
 ## Example as a PyTorch Transform - CIFAR10
 
