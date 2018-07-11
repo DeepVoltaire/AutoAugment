@@ -1,6 +1,7 @@
 # AutoAugment - Learning Augmentation Policies from Data
 Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policies learned by [AutoAugment](https://arxiv.org/abs/1805.09501v1), described in this [Google AI Blogpost](https://ai.googleblog.com/2018/06/improving-deep-learning-performance.html).
 
+__Update 11.07.2018:__ The fill color after applying translations, rotations and shearing can be specified with e.g. "policy = ImageNetPolicy(fillcolor=(0, 0, 0))". Current functionality seems to work well. Will update as soon I know more details from the authors.
 __Update 18.06.2018:__ Changed order and functionality of many magnitudes. Higher magnitude now always apply the operation with higher intensity and the sign is randomly sampled (e.g. rotating for 20 degrees to the left or right). This seems to be more in line with how it was done in the paper (judging from the figures). Have asked the authors for more details and will update as soon as I know more.
 
 ##### Tested with Python 3.6. Needs pillow>=5.0.0
@@ -28,9 +29,8 @@ To see examples of all operations and magnitudes applied to images, take a look 
 ```python
 from autoaugment import ImageNetPolicy
 data = ImageFolder(rootdir, transform=transforms.Compose(
-                        [transforms.Resize(256), transforms.RandomResizedCrop(224), 
-                         transforms.RandomHorizontalFlip(), ImageNetPolicy(), 
-			 transforms.ToTensor(), transforms.Normalize(...)]))
+                        [transforms.Resize(256), ImageNetPolicy(), transforms.RandomResizedCrop(224), 
+                         transforms.RandomHorizontalFlip(), transforms.ToTensor(), transforms.Normalize(...)]))
 loader = DataLoader(data, ...)
 ```
 
@@ -98,6 +98,3 @@ loader = DataLoader(data, ...)
 ### Fine Grained Visual Classification Datasets
 
 ![SVHN Results](figures/FGVC_results.png)
-
-### Open questions
-- How can you set the corner pixel values after rotating to gray instead of black?
