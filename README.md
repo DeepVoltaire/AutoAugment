@@ -1,7 +1,7 @@
 # AutoAugment - Learning Augmentation Policies from Data
 Unofficial implementation of the ImageNet, CIFAR10 and SVHN Augmentation Policies learned by [AutoAugment](https://arxiv.org/abs/1805.09501v1), described in this [Google AI Blogpost](https://ai.googleblog.com/2018/06/improving-deep-learning-performance.html).
 
-__Update 13.07.2018:__ [Blogpost](https://towardsdatascience.com/how-to-improve-your-image-classifier-with-googles-autoaugment-77643f0be0c9) about AutoAugment and Double Transfer Learning. Code updates: The fill color after applying translations, rotations and shearing can now be specified with e.g. "policy = ImageNetPolicy(fillcolor=(0, 0, 0))". Current functionality seems to work well. Will update as soon I know more details from the authors.
+__Update 13.07.2018:__ Wrote a [Blogpost](https://towardsdatascience.com/how-to-improve-your-image-classifier-with-googles-autoaugment-77643f0be0c9) about AutoAugment and Double Transfer Learning. Code updates: The fill color after applying translations, rotations and shearing can now be specified with e.g. "policy = ImageNetPolicy(fillcolor=(0, 0, 0))". Current functionality seems to work well. Will update as soon I know more details from the authors.
 
 __Update 18.06.2018:__ Changed order and functionality of many magnitudes. Higher magnitude now always apply the operation with higher intensity and the sign is randomly sampled (e.g. rotating for 20 degrees to the left or right). This seems to be more in line with how it was done in the paper (judging from the figures). Have asked the authors for more details and will update as soon as I know more.
 
