@@ -6,7 +6,7 @@ class ImageNetPolicy(object):
     """ Randomly choose one of the best 24 Sub-policies on ImageNet. Adapted to segmentation tasks too.
         Example:
         >>> policy = ImageNetPolicy()
-        >>> transformed_img, transformed_mask = policy(image, mask)
+        >>> transformed_img, transformed_mask = policy(image)
         Example as a PyTorch Transform:
         >>> transform=transforms.Compose([
         >>>     transforms.Resize(256),
